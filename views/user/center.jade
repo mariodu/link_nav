@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  #user-center(ng-app)
+    .left_container
+      #side-category(ng-controller="CategoryCtrl")
+        ul
+          li(ng-repeat="category in categories")
+            {{category.name}}
+      #hide-side
+    .right_container
+  script(type="text/javascript", src="/javascripts/center.js")

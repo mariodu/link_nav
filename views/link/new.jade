@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  form(id="new-link-form", method="post", action="/" + locals.current_user.user_id + "/link/new")
+    div
+      div
+        span(for="linkname") Name:
+        input(type="text", name="linkname", placeholder="Link name")
+      div
+        span(for="linkurl") Name:
+        input(type="text", name="linkurl", placeholder="Url")
+      div
+        span(for="linkcategory") Category:
+        select#linkcategory(form="new-link-form", name="linkcategory")
+          option(value=0)= ""
+          each category in categories
+            - console.log(category)
+            option(value=category._id)= category.name
+      div
+        span(for="linkpublic") Public?:
+        input(type="checkbox", name="linkpublic", value='true')
+      div
+        span(for="linkdescription") Description:
+        textarea(name= "linkdescription", cols=36, rows=10, placeholder="Link Description")
+      div#new-link-submit
+        input(type="submit", value="Create")

@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+
+  form(id="reg-form", method="post", action="/user/register")
+    div
+      div
+        span(for="username") Username:
+        input(type="text", name="username", placeholder="Username")
+      div
+        span(for="email") Email:
+        input(type="text", name="email", placeholder="Email")
+      div
+        span(for="password") Password:
+        input(type="password", name="password", placeholder="Password")
+      div
+        span(for="password_confirmtion") Password Confirmtion:
+        input(type="password", name="password_confirmtion", placeholder="Password")
+      div#reg-submit
+        input(type="submit", value="Register")

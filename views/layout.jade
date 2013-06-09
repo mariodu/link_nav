@@ -1,0 +1,26 @@
+doctype 5
+html
+  head
+    title= "Link Nav | " + path
+    link(href='http://fonts.googleapis.com/css?family=Poiret+One|Roboto+Condensed:400,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/user.css')
+    script(type="text/javascript", src="/javascripts/jquery.min.js")
+  body(class= path=="Home"?"":"inner" )
+    section.content
+      header
+        section#logo
+          span#logo-name= "Link Nav"
+          span#logo-description= "Design Your Own Link Nav page"
+        nav.nav
+          - if (locals.current_user)
+            a(href="/user/center")= locals.current_user.username
+            a(href="/user/logout")= "Logout"
+          - else
+            a(href="/user/login")= "Login"
+            a(href="/user/register")= "Register"
+    block content
+    a(id="go-top", href="#")
+    footer.footer
+      div#footer-content="Link Nav - Design By MarioDu"
+    script(type="text/javascript", src="/javascripts/angular.min.js")

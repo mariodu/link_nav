@@ -1,0 +1,157 @@
+#login {
+  height: 240px;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -120px 0 0 -200px;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #ddd;
+}
+#login .login_notice {
+  position: relative;
+  top: -42px;
+  text-align: center;
+  margin-bottom: -21px;
+  background-color: #F0E555;
+  border-radius: 5px;
+  height: 25px;
+  vertical-align: middle;
+  visibility: hidden;
+}
+#login h1 {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), 0px 2px 0 rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  text-align: center;
+  color: #666;
+  margin: 0 0 30px 0;
+  letter-spacing: 4px;
+  font: normal 26px/1 Verdana, Helvetica;
+  padding-top: 10px;
+  position: relative;
+}
+#login h1:after,
+#login h1:before {
+  background-color: #777;
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 25px;
+  width: 120px;
+}
+#login h1:after {
+  background-image: -webkit-gradient(linear, left top, right top, from(#777777), to(#ffffff));
+  background-image: -webkit-linear-gradient(left, #777777, #ffffff);
+  background-image: -moz-linear-gradient(left, #777777, #ffffff);
+  background-image: -ms-linear-gradient(left, #777777, #ffffff);
+  background-image: -o-linear-gradient(left, #777777, #ffffff);
+  background-image: linear-gradient(left, #777777, #ffffff);
+  right: 0;
+}
+#login h1:before {
+  background-image: -webkit-gradient(linear, right top, left top, from(#777777), to(#ffffff));
+  background-image: -webkit-linear-gradient(right, #777777, #ffffff);
+  background-image: -moz-linear-gradient(right, #777777, #ffffff);
+  background-image: -ms-linear-gradient(right, #777777, #ffffff);
+  background-image: -o-linear-gradient(right, #777777, #ffffff);
+  background-image: linear-gradient(right, #777777, #ffffff);
+  left: 0;
+}
+#login:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border: 1px dashed #ccc;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  -moz-box-shadow: 0 0 0 1px #fff;
+  -webkit-box-shadow: 0 0 0 1px #fff;
+  box-shadow: 0 0 0 1px #fff;
+}
+#login:hover {
+  border: 1px solid #6FD0ED;
+  box-shadow: 0 0 20px #6FD0ED;
+}
+#login input {
+  padding: 10px 10px 10px 30px;
+  margin: 0 0 10px 20px;
+  width: 355px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+  -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+  box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+}
+#login input:focus {
+  background-color: #fff;
+  border-color: #6FD0ED;
+  outline: none;
+  -moz-box-shadow: 0 0 0 1px #6FD0ED inset;
+  -webkit-box-shadow: 0 0 0 1px #6FD0ED inset;
+  box-shadow: 0 0 0 1px #6FD0ED inset;
+}
+#login input[name="email"] {
+  background: #f1f1f1 url('../images/icon.png') -118px -97px no-repeat;
+}
+#login input[name="email"]:focus {
+  background: url('../images/icon.png') -88px -67px no-repeat;
+}
+#login input[name="password"] {
+  background: #f1f1f1 url('../images/icon-2.png') -47px -78px no-repeat;
+}
+#login input[name="password"]:focus {
+  background: url('../images/icon-2.png') -103px -103px no-repeat;
+}
+#login #login-submit {
+  background-color: #6FD0ED;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-style: solid;
+  border-color: #6FD0ED;
+  border-width: 1px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  float: left;
+  height: 35px;
+  padding: 0;
+  width: 120px;
+  cursor: pointer;
+  font: bold 15px Arial, Helvetica;
+  color: #000000;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+#login #login-submit:hover,
+#login #login-submit:focus {
+  outline: none;
+  background-color: #00afe4;
+}
+#login #login-submit:active {
+  outline: none;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+}
+#login #login-submit:disabled {
+  background-color: #C5EDEF;
+  color: grey;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+#login #login-submit::-moz-focus-inner {
+  border: none;
+}

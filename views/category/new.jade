@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  form(id="new-category-form", method="post", action="/" + locals.current_user.user_id + "/category/new")
+    div
+      div
+        span(for="categoryname") Name:
+        input(type="text", name="categoryname", placeholder="Categoryname")
+      div
+        span(for="categorypublic") Public?:
+        input(type="checkbox", name="categorypublic", value='true')
+      div#new-category-submit
+        input(type="submit", value="Create")

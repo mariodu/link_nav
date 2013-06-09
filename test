@@ -1,0 +1,66 @@
+(function() {
+  var Link, mongoose, need_login, sanitize;
+
+  mongoose = require('mongoose');
+
+  Link = mongoose.model('Link');
+
+  sanitize = require('validator').sanitize;
+
+  exports.index = function(req, res) {
+    var is_public;
+
+    if (req.session.hasOwnProperty('user') && parseInt(req.params.user_id) === req.session.user.user_id) {
+      is_public = [
+        {
+          is_public: true
+        }, {
+          is_public: false
+        }
+      ];
+    } else {
+      is_public = [
+        {
+          is_public: true
+        }
+      ];
+    }
+    return Link.find({
+      '$or': is_public
+    }, function(err, links, count) {
+      if (err) {
+        throw err;
+      }
+      return res.send(links);
+    });
+  };
+
+  exports["new"] = function(req, res) {};
+
+  exports.create = function(req, res) {};
+
+  exports.destory = function(req, res) {};
+
+  exports.edit = function(req, res) {};
+
+  exports.update = function(req, res) {};
+
+  exports.show = function(req, res) {};
+
+  need_login = function(req, res, callback) {
+    if (!req.session.user) {
+      info['error_code'] = 110;
+      info['error_info'] = 'Login first';
+      info['refer_path'] = '/user/login';
+      return res.send(info);
+    }
+    if (req.session.hasOwnProperty('user') && req.params.user_id === req.session.user.user_id) {
+      return callback(req, res);
+    } else {
+      info['error_code'] = 111;
+      info['error_info'] = 'no right to create link to other user';
+      return res.send(info);
+    }
+  };
+
+}).call(this);
